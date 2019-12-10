@@ -1,0 +1,46 @@
+//
+//  ViewController.swift
+//  flip-cart-count
+//
+//  Created by Md.Moshfiqur rahman on 10/12/19.
+//  Copyright © 2019 Md.Moshfiqur rahman. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var cuontTwo: UILabel!
+  var  flipcountlabletwo = 0
+    
+    @IBOutlet weak var flipCountLable: UILabel!
+    var flipCount = 0
+    @IBAction func touchSecondcard(_ sender: UIButton) {
+        flipCount += 1
+        flipCountLable.text = "Flipth:\(flipCount)"
+        flipCard(withEmoji: "🙉", on: sender)
+        
+    }
+    
+    @IBAction func yourName(_ sender: UIButton) {
+        flipcountlabletwo += 2
+        cuontTwo.text = "YOUR NAME DOGE:\(flipcountlabletwo)"
+    }
+    @IBAction func touchCard(_ sender: UIButton) {
+        flipCount += 1
+        flipCountLable.text = "Flipth:\(flipCount)"
+        flipCard(withEmoji: "🙈", on: sender)
+    }
+    
+    func flipCard(withEmoji emoji:String,on button:UIButton){
+        if button.currentTitle == emoji{
+            button.setTitle("", for:UIControl.State.normal)
+            button.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        }
+        else{
+            button.setTitle(emoji,for:UIControl.State.normal)
+            button.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        }
+    }
+
+}
